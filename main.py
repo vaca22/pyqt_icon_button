@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton
+from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QFileDialog
 
 
 class Window(QMainWindow):
@@ -26,7 +26,10 @@ class Window(QMainWindow):
         button.setIcon(QIcon('logo.png'))
 
     def clickme(self):
-        print("press")
+        print("gaga")
+        fname = QFileDialog.getOpenFileNames(self,"Open File","","Mp3 Files (*.mp3)")
+        if fname:
+            print(fname[0])
 
 
 if __name__ == '__main__':
